@@ -1,0 +1,17 @@
+{
+     "AssociationInfo":  {
+                             "NodeID":  "node3",
+                             "OrchestratorContext":  {
+                                                         "PodName":  "LVMPod1",
+                                                         "PodNamespace":  "LVMNamespace1"
+                                                     },
+                             "InterfaceID":  "172.21.0.7",
+                             "ContainerType":  "AzureContainerInstance"
+                         },
+     "AllocationRequest":  {
+                               "SubnetName":  "default"
+                           },
+     "AllowHostToNCCommunication": true,
+     "AllowNCToHostCommunication": true
+
+}
