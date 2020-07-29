@@ -1,0 +1,7 @@
+{
+    "OrchestratorType": "Kubernetes",
+    "IPAddresses":  [
+                        "<real node ip>"
+                    ],
+    "LocationType":  "dummy"
+}
