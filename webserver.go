@@ -28,6 +28,6 @@ func IndexHandler(w http.ResponseWriter, r *http.Request){
 }
 
 func main (){
-    http.HandleFunc("/endpoint", IndexHandler)
+    http.HandleFunc("/", IndexHandler)
     http.ListenAndServe(":8002", nil)
 }
