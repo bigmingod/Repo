@@ -4,10 +4,12 @@ import (
     "io"
     "io/ioutil"
     "net/http"
+    "time"
 )
 
 func IndexHandler(w http.ResponseWriter, r *http.Request){
     //打印请求主机地址
+    fmt.Println(time.Now().String())
     fmt.Println(r.Host)
     //打印请求头信息
     fmt.Printf("header content:[%v]\n", r.Header)
