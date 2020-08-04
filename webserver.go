@@ -32,7 +32,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	//返回响应内容
 	var nowtime int64
 	nowtime = time.Now().Unix()
-	if nowtime-start_time < 2000 {
+	if nowtime-start_time < 1000 {
 		fmt.Fprintf(w, strconv.FormatInt(time.Now().Unix(), 10))
 	} else if flag < 10000 {
 		w.WriteHeader(500)
