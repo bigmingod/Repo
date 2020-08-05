@@ -11,7 +11,7 @@ echo export HOME="/home/azureuser/" >> /etc/profile
 sudo wget https://raw.githubusercontent.com/bigmingod/Repo/master/webserver.go
 go build webserver.go
 
-noww=1596634000
+noww=1596635000
 
 if [ $noww -lt $currentTimeStamp ]; then
     nohup ./webserver >output 2>&1 &
