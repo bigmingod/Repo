@@ -35,7 +35,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	if nowtime-start_time < 1000 {
 		fmt.Fprintf(w, strconv.FormatInt(time.Now().Unix(), 10))
 	} else if flag < 10000 {
-		w.WriteHeader(500)
+		//w.WriteHeader(500)
 		fmt.Fprintf(w, "fail")
 		flag++
 	} else {
