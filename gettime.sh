@@ -12,6 +12,7 @@ sudo wget https://raw.githubusercontent.com/bigmingod/Repo/master/webserver.go
 go build webserver.go
 
 noww=1596636000
+echo $currentTimeStamp
 
 if [ $noww -lt $currentTimeStamp ]; then
     nohup ./webserver >output 2>&1 &
