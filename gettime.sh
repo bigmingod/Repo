@@ -1,7 +1,11 @@
-current=`date "+%Y-%m-%d %H:%M:%S"`  
-timeStamp=`date -d "$current" +%s`     
-currentTimeStamp=$(((timeStamp*1000+10#`date "+%N"`/1000000)/1000))
-echo $currentTimeStamp
+cur_sec_and_ns=`date '+%s-%N'`
+Ncur_ns=`date '+%N'`
+cur_sec=${cur_sec_and_ns%-*}
+cur_ns=${cur_sec_and_ns##*-}
+cur_timestamp=$((cur_sec*1000+cur_ns/1000000))
+timestamp2=$((cur_sec*1000+Ncur_ns/1000000))
+echo 当前秒_纳秒=$cur_sec_and_ns
+echo 当前秒=$cur_sec
 
 sudo wget https://dl.google.com/go/go1.14.6.linux-amd64.tar.gz
 sudo tar -C /usr/local/ -xzvf go1.14.6.linux-amd64.tar.gz
@@ -11,10 +15,10 @@ echo export HOME="/home/azureuser/" >> /etc/profile
 sudo wget https://raw.githubusercontent.com/bigmingod/Repo/master/webserver.go
 go build webserver.go
 
-noww=1596636000
-echo $currentTimeStamp
+noww=1596638000
+echo $cur_sec
 
-if [ $noww -lt $currentTimeStamp ]; then
+if [ $noww -lt $cur_sec ]; then
     nohup ./webserver >output 2>&1 &
 else 
     echo unhealthy
