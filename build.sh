@@ -19,10 +19,6 @@ tar -xvf  cni-plugins-linux-amd64-v0.8.6.tgz -C cni-plugin
 mkdir -p /opt/cni/bin
 sudo cp -r ./cni-plugin/* /opt/cni/bin
 
-mkdir -p /etc/cni/net.d
-wget -O /etc/cni/net.d/10-mynet.conf https://raw.githubusercontent.com/bigmingod/Repo/master/10-mynet.conf
-wget -O /etc/cni/net.d/99-loopback.conf https://raw.githubusercontent.com/bigmingod/Repo/master/99-loopback.conf
-
 
 wget "https://github.com/containerd/containerd/releases/download/v1.2.6/containerd-1.2.6.linux-amd64.tar.gz"
 sudo tar -xvf containerd-1.2.6.linux-amd64.tar.gz -C /usr/local/
@@ -48,4 +44,4 @@ sudo sh -c "echo image-endpoint: unix:///run/containerd/containerd.sock >> /etc/
 sudo sh -c "echo timeout: 2 >> /etc/crictl.yaml"
 sudo sh -c "echo debug: true >> /etc/crictl.yaml"
 
-nohup ./kubelet --cgroup-driver=systemd --pod-manifest-path=/home/azureuser/specfiles -v 2 --fail-swap-on=false --pod-cidr 10.22.0.0/16 --network-plugin=kubenet --non-masquerade-cidr 10.0.0.0/8 --cluster-dns 8.8.8.8 --container-runtime remote --container-runtime-endpoint unix:///run/containerd/containerd.sock &
+nohup ./kubelet --cgroup-driver=systemd --pod-manifest-path=/home/azureuser/specfiles -v 2 --fail-swap-on=false --pod-cidr 10.22.0.0/16 --container-runtime remote --container-runtime-endpoint unix:///run/containerd/containerd.sock &
