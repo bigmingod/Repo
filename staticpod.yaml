@@ -6,6 +6,7 @@ metadata:
     role: myrole
   namespace: kubeletens1
 spec:
+  hostNetwork: true
   containers:
     - name: linux-pause-1
       image: docker.io/library/alpine:latest
