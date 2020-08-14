@@ -11,6 +11,7 @@ export PATH=$PATH:/usr/local/go/bin
 
 curl -L --remote-name-all https://storage.googleapis.com/kubernetes-release/release/v1.18.3/bin/linux/amd64/kubelet
 chmod +x kubelet
+mkdir -p /home/azureuser/specfiles
 wget -O /home/azureuser/specfiles/staticpod.yaml https://raw.githubusercontent.com/bigmingod/Repo/master/staticpod.yaml
 
 wget https://github.com/containernetworking/plugins/releases/download/v0.8.6/cni-plugins-linux-amd64-v0.8.6.tgz
