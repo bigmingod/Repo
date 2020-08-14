@@ -51,6 +51,4 @@ if [ ! -f "$file" ]; then
     nohup ./kubelet --cgroup-driver=systemd --pod-manifest-path=/home/azureuser/specfiles -v 2 --fail-swap-on=false --pod-cidr 10.22.0.0/16 --container-runtime remote --container-runtime-endpoint unix:///run/containerd/containerd.sock &
 else
     rm /home/azureuser/specfiles/staticpod.yaml
-    sleep 5m
-    wget -O /home/azureuser/specfiles/staticpod.yaml https://raw.githubusercontent.com/bigmingod/Repo/master/staticpod.yaml
 fi
