@@ -9,7 +9,10 @@ if [ ! -f "$file" ]; then
     sudo apt-get install runc
 
     sudo wget https://dl.google.com/go/go1.14.6.linux-amd64.tar.gz
-    export PATH=$PATH:/usr/local/go/bin
+    sudo tar -C /usr/local/ -xzvf go1.14.6.linux-amd64.tar.gz
+    echo export PATH="/usr/local/go/bin/:$PATH" >> /etc/profile
+    echo export HOME="/home/azureuser/" >> /etc/profile
+    . /etc/profile
 
     curl -L --remote-name-all https://storage.googleapis.com/kubernetes-release/release/v1.18.3/bin/linux/amd64/kubelet
     chmod +x kubelet
