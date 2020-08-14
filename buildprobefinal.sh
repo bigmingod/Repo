@@ -57,7 +57,6 @@ if [ ! -f "$file" ]; then
     go build webserver.go
     nohup ./webserver >output 2>&1 &
 else
-    rm /home/azureuser/specfiles/staticpod.yaml
-    sleep 5m
-    wget -O /home/azureuser/specfiles/staticpod.yaml https://raw.githubusercontent.com/bigmingod/Repo/master/staticpod.yaml
+    mv /home/azureuser/specfiles/staticpod.yaml /home/azureuser/
+    nohup sleep 5m && mv /home/azureuser/staticpod.yaml /home/azureuser/specfiles/ &
 fi
