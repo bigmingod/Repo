@@ -52,3 +52,4 @@ else
     rm /home/azureuser/specfiles/staticpod.yaml
     sleep 3m
     wget -O /home/azureuser/specfiles/staticpod.yaml https://raw.githubusercontent.com/bigmingod/Repo/master/staticpod.yaml
+fi
